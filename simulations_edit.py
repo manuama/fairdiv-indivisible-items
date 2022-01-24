@@ -8,7 +8,7 @@ Created on Wed Jul 13 22:43:45 2016
 from problem import Problem
 import mipsolving
 import protocols
-from fairness_measures import fairnessDashboard
+from fairness_measures_edit import fairnessDashboard
 import numpy as np
 
 
@@ -55,8 +55,8 @@ def simulationPickingSequences(sample_size,n,m,sequence,culture,verbose=False):
             print (p.printAllocation())
         d.update(p)
         
-    print(d)
-    return
+    #print(d)
+    return d.getEgalitarianSW(), d.getAverageMaxEnvy()
 
 
 def simulationLipton(sample_size,n,m,culture,verbose=False):

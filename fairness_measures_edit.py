@@ -174,7 +174,7 @@ class fairnessDashboard(object):
         s += "= Average max envy: "+str(np.mean(self.maxEnvy)).rjust(26)+"\n"
         s +="=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n"
         return s
-
+        
     def update(self,p):
         '''
         update the dashboard given a new problem
@@ -187,4 +187,10 @@ class fairnessDashboard(object):
         self.nbEnvious.append(nbEnviousAgents(m))
         self.maxEnvy.append(maxEnvy(m))
         return
+        
+    def getEgalitarianSW(self):
+        return np.mean(self.egalitarianSW)
+
+    def getAverageMaxEnvy(self):
+        return np.mean(self.maxEnvy)
 
